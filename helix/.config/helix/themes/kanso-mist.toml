@@ -1,0 +1,22 @@
+# Kansō Mist for Helix
+# Adapted from https://github.com/webhooked/kanso.nvim
+
+inherits = "kanso"
+
+[palette]
+ui_bg = "#22262D"
+ui_bg_dim = "#2A2C35"
+ui_bg_p1 = "#393B44"
+ui_bg_p2 = "#393B44"
+ui_special = "#5C6066"
+ui_nontext = "#5C6066"
+ui_whitespace = "#5C6066"
+ui_indent = "#393B44"
+ui_border = "#393B44"
+ui_visual = "#393B44"
+ui_line_nr = "#75797F"
+ui_cursor_fg = "#22262D"
+ui_menu_bg = "#22262D"
+ui_menu_selected = "#393B44"
+ui_menu_thumb = "#393B44"
+ui_float_bg = "#22262D"

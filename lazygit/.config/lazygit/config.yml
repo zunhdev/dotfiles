@@ -1,0 +1,29 @@
+gui:
+  # Kanso Ink — https://github.com/webhooked/kanso.nvim
+  theme:
+    activeBorderColor:
+      - "#7AA89F" # green5
+      - bold
+    inactiveBorderColor:
+      - "#5C6066" # gray5
+    searchingActiveBorderColor:
+      - "#7FB4CA" # blue
+      - bold
+    optionsTextColor:
+      - "#938AA9" # violet
+    selectedLineBgColor:
+      - "#393B44" # inkBg3
+    inactiveViewSelectedLineBgColor:
+      - "#22262D" # inkBg2
+    cherryPickedCommitFgColor:
+      - "#14171D" # inkBg0
+    cherryPickedCommitBgColor:
+      - "#8BA4B0" # blue3
+    markedBaseCommitFgColor:
+      - "#14171D" # inkBg0
+    markedBaseCommitBgColor:
+      - "#DCA561" # yellow / gitYellow
+    unstagedChangesColor:
+      - "#E46876" # red2
+    defaultFgColor:
+      - "#C5C9C7" # fg

@@ -1,0 +1,14 @@
+# macOS metadata
+.DS_Store
+
+# Herdr runtime state (only config.toml belongs in this repository)
+/herdr/.config/herdr/*.log
+/herdr/.config/herdr/*.log.*
+/herdr/.config/herdr/*.sock
+/herdr/.config/herdr/.plugins.lock
+/herdr/.config/herdr/release-notes.json
+/herdr/.config/herdr/session.json
+
+# Lazygit runtime state (preferences belong in config.yml)
+/lazygit/.config/lazygit/github_pull_requests.json
+/lazygit/.config/lazygit/state.yml

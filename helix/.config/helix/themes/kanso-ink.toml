@@ -1,0 +1,4 @@
+# Kansō Ink for Helix
+# Adapted from https://github.com/webhooked/kanso.nvim
+
+inherits = "kanso"

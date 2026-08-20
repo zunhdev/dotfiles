@@ -1,0 +1,4 @@
+# Machine-local Lazygit runtime files
+\.DS_Store
+github_pull_requests\.json
+state\.yml

@@ -1,0 +1,7 @@
+# Machine-local Herdr runtime files
+\.DS_Store
+.+\.log(?:\..+)?
+.+\.sock
+\.plugins\.lock
+release-notes\.json
+session\.json

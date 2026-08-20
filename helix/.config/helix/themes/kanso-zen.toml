@@ -1,0 +1,20 @@
+# Kansō Zen for Helix
+# Adapted from https://github.com/webhooked/kanso.nvim
+
+inherits = "kanso"
+
+[palette]
+ui_bg = "#090E13"
+ui_bg_dim = "#1C1E25"
+ui_bg_p1 = "#1C1E25"
+ui_bg_p2 = "#22262D"
+ui_special = "#5C6066"
+ui_nontext = "#5C6066"
+ui_whitespace = "#393B44"
+ui_indent = "#22262D"
+ui_border = "#22262D"
+ui_visual = "#393B44"
+ui_line_nr = "#5C6066"
+ui_cursor_fg = "#090E13"
+ui_menu_bg = "#090E13"
+ui_float_bg = "#090E13"

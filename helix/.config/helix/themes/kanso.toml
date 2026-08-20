@@ -1,0 +1,243 @@
+# Kansō for Helix
+# Adapted from https://github.com/webhooked/kanso.nvim
+# Upstream revision: 1afbbb449aa0254823dbe1932e3cbb51886ff9fe
+#
+# This is the shared scope map and the default Ink palette. Prefer one of the
+# explicit variants: kanso-ink, kanso-zen, kanso-mist, or kanso-pearl.
+
+# Syntax
+"attribute" = "syn_constant"
+
+"type" = "syn_type"
+"type.builtin" = "syn_type"
+"type.parameter" = "syn_parameter"
+"type.enum.variant" = "syn_constant"
+
+"constructor" = "syn_special1"
+
+"constant" = "syn_constant"
+"constant.builtin" = "syn_constant"
+"constant.builtin.boolean" = "syn_constant"
+"constant.character" = "syn_string"
+"constant.character.escape" = "syn_regex"
+"constant.numeric" = "syn_number"
+
+"string" = "syn_string"
+"string.regexp" = "syn_regex"
+"string.special" = "syn_special1"
+"string.special.path" = "syn_string"
+"string.special.url" = { fg = "syn_special1", underline = { color = "syn_special1", style = "line" } }
+"string.special.symbol" = "syn_identifier"
+
+"comment" = { fg = "syn_comment", modifiers = ["italic"] }
+"comment.unused" = { fg = "syn_deprecated", modifiers = ["italic", "dim"] }
+
+"variable" = "ui_fg"
+"variable.builtin" = { fg = "syn_special2", modifiers = ["italic"] }
+"variable.parameter" = "syn_parameter"
+"variable.other.member" = "syn_identifier"
+
+"label" = "syn_special1"
+
+"punctuation" = "syn_punct"
+"punctuation.special" = "syn_special1"
+
+"keyword" = { fg = "syn_keyword", modifiers = ["italic"] }
+"keyword.control.return" = { fg = "syn_special3", modifiers = ["italic"] }
+"keyword.control.exception" = { fg = "syn_special3", modifiers = ["italic"] }
+"keyword.operator" = "syn_operator"
+"keyword.directive" = "syn_preproc"
+
+"operator" = "syn_operator"
+
+"function" = "syn_function"
+"function.builtin" = "syn_function"
+"function.method" = "syn_function"
+"function.macro" = "syn_preproc"
+
+"tag" = "syn_special1"
+"tag.builtin" = "syn_special1"
+"namespace" = "syn_type"
+"special" = "syn_special1"
+
+"markup.heading" = { fg = "syn_function", modifiers = ["bold"] }
+"markup.heading.marker" = "syn_punct"
+"markup.heading.1" = { fg = "syn_function", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "syn_type", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "syn_special1", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "syn_identifier", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "syn_string", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "syn_number", modifiers = ["bold"] }
+"markup.list" = "syn_special1"
+"markup.list.checked" = "diag_ok"
+"markup.list.unchecked" = "syn_comment"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link" = "syn_identifier"
+"markup.link.url" = { fg = "syn_special1", underline = { color = "syn_special1", style = "line" } }
+"markup.link.label" = "syn_identifier"
+"markup.link.text" = "ui_fg"
+"markup.quote" = { fg = "syn_parameter", modifiers = ["italic"] }
+"markup.raw" = "syn_string"
+
+"diff.plus" = { fg = "vcs_added", bg = "diff_add" }
+"diff.plus.gutter" = "vcs_added"
+"diff.minus" = { fg = "vcs_removed", bg = "diff_delete" }
+"diff.minus.gutter" = "vcs_removed"
+"diff.delta" = { fg = "vcs_changed", bg = "diff_change" }
+"diff.delta.gutter" = "vcs_changed"
+"diff.delta.moved" = { fg = "diag_info", bg = "diff_text" }
+"diff.delta.conflict" = { fg = "diag_error", bg = "diff_delete" }
+
+# Interface
+"ui.background" = { fg = "ui_fg", bg = "ui_bg" }
+"ui.background.separator" = { fg = "ui_border", bg = "ui_bg" }
+
+"ui.gutter" = { fg = "ui_nontext", bg = "ui_bg" }
+"ui.gutter.selected" = { fg = "ui_line_nr_active", bg = "ui_bg" }
+"ui.linenr" = "ui_line_nr"
+"ui.linenr.selected" = { fg = "ui_line_nr_active", modifiers = ["bold"] }
+
+"ui.statusline" = { fg = "ui_fg_dim", bg = "ui_bg" }
+"ui.statusline.inactive" = { fg = "ui_nontext", bg = "ui_bg" }
+"ui.statusline.normal" = { fg = "ui_cursor_fg", bg = "diag_info", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "ui_cursor_fg", bg = "diag_ok", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "ui_cursor_fg", bg = "syn_keyword", modifiers = ["bold"] }
+
+"ui.bufferline" = { fg = "ui_special", bg = "ui_bg" }
+"ui.bufferline.active" = { fg = "ui_fg_dim", bg = "ui_bg_p1", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "ui_bg" }
+
+"ui.popup" = { fg = "ui_float_fg", bg = "ui_float_bg" }
+"ui.popup.info" = { fg = "ui_float_fg", bg = "ui_float_bg" }
+"ui.window" = { fg = "ui_border", bg = "ui_bg" }
+"ui.help" = { fg = "ui_float_fg", bg = "ui_float_bg" }
+
+"ui.text" = "ui_fg"
+"ui.text.focus" = { fg = "ui_menu_fg", bg = "ui_menu_selected", modifiers = ["bold"] }
+"ui.text.inactive" = "ui_nontext"
+"ui.text.info" = "ui_fg_dim"
+"ui.text.directory" = "syn_function"
+"ui.text.symlink" = "syn_type"
+
+"ui.virtual" = "ui_nontext"
+"ui.virtual.ruler" = { bg = "ui_bg_p1" }
+"ui.virtual.whitespace" = "ui_whitespace"
+"ui.virtual.indent-guide" = "ui_indent"
+"ui.virtual.inlay-hint" = { fg = "syn_comment", bg = "ui_bg_dim" }
+"ui.virtual.inlay-hint.parameter" = { fg = "syn_parameter", bg = "ui_bg_dim", modifiers = ["dim"] }
+"ui.virtual.inlay-hint.type" = { fg = "syn_type", bg = "ui_bg_dim", modifiers = ["dim"] }
+"ui.virtual.wrap" = "ui_nontext"
+"ui.virtual.jump-label" = { fg = "syn_special1", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "ui_menu_fg", bg = "ui_menu_bg" }
+"ui.menu.selected" = { fg = "ui_menu_fg", bg = "ui_menu_selected", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "ui_menu_thumb", bg = "ui_menu_bg" }
+
+"ui.selection" = { bg = "ui_visual" }
+"ui.selection.primary" = { bg = "ui_visual" }
+
+"ui.cursor" = { fg = "ui_cursor_fg", bg = "ui_cursor_bg" }
+"ui.cursor.primary" = { fg = "ui_cursor_fg", bg = "ui_cursor_bg" }
+"ui.cursor.normal" = { fg = "ui_cursor_fg", bg = "ui_cursor_bg" }
+"ui.cursor.insert" = { fg = "ui_cursor_fg", bg = "diag_ok" }
+"ui.cursor.select" = { fg = "ui_cursor_fg", bg = "syn_keyword" }
+"ui.cursor.primary.normal" = { fg = "ui_cursor_fg", bg = "ui_cursor_bg" }
+"ui.cursor.primary.insert" = { fg = "ui_cursor_fg", bg = "diag_ok" }
+"ui.cursor.primary.select" = { fg = "ui_cursor_fg", bg = "syn_keyword" }
+"ui.cursor.match" = { fg = "diag_warning", modifiers = ["bold"] }
+
+"ui.highlight" = { fg = "ui_fg", bg = "ui_search", modifiers = ["bold"] }
+"ui.highlight.frameline" = { bg = "diff_delete" }
+"ui.cursorline.primary" = { bg = "ui_bg_p2" }
+"ui.cursorline.secondary" = { bg = "ui_bg_p1" }
+"ui.cursorcolumn.primary" = { bg = "ui_bg_p2" }
+"ui.cursorcolumn.secondary" = { bg = "ui_bg_p1" }
+
+"ui.picker.header" = { fg = "ui_fg_dim", modifiers = ["bold"] }
+"ui.picker.header.column" = { fg = "ui_fg_dim", underline = { color = "ui_border", style = "line" } }
+"ui.picker.header.column.active" = { fg = "syn_function", modifiers = ["bold"], underline = { color = "syn_function", style = "line" } }
+
+"ui.debug.breakpoint" = "syn_special1"
+"ui.debug.active" = { fg = "diag_error", bg = "diff_delete" }
+
+# Diagnostics
+"error" = "diag_error"
+"warning" = "diag_warning"
+"info" = "diag_info"
+"hint" = "diag_hint"
+
+"error.diagnostic.inline" = "diag_error"
+"warning.diagnostic.inline" = "diag_warning"
+"info.diagnostic.inline" = "diag_info"
+"hint.diagnostic.inline" = "diag_hint"
+
+"diagnostic" = { underline = { color = "ui_nontext", style = "curl" } }
+"diagnostic.error" = { underline = { color = "diag_error", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "diag_warning", style = "curl" } }
+"diagnostic.info" = { underline = { color = "diag_info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "diag_hint", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { fg = "syn_deprecated", modifiers = ["crossed_out"] }
+
+"tabstop" = { bg = "ui_search" }
+
+[palette]
+# Ink UI
+ui_fg = "#C5C9C7"
+ui_fg_dim = "#A4A7A4"
+ui_bg = "#14171D"
+ui_bg_dim = "#1F1F26"
+ui_bg_p1 = "#1F1F26"
+ui_bg_p2 = "#22262D"
+ui_special = "#5C6066"
+ui_nontext = "#5C6066"
+ui_whitespace = "#4B4E57"
+ui_indent = "#22262D"
+ui_border = "#22262D"
+ui_visual = "#393B44"
+ui_search = "#2D4F67"
+ui_line_nr = "#5C6066"
+ui_line_nr_active = "#F2F1EF"
+ui_cursor_bg = "#F2F1EF"
+ui_cursor_fg = "#14171D"
+ui_menu_fg = "#F2F1EF"
+ui_menu_bg = "#14171D"
+ui_menu_selected = "#393B44"
+ui_menu_thumb = "#393B44"
+ui_float_fg = "#A4A7A4"
+ui_float_bg = "#14171D"
+
+# Ink/Zen/Mist syntax
+syn_string = "#8A9A7B"
+syn_number = "#A292A3"
+syn_constant = "#B6927B"
+syn_identifier = "#8992A7"
+syn_parameter = "#909398"
+syn_function = "#8BA4B0"
+syn_keyword = "#8992A7"
+syn_operator = "#909398"
+syn_preproc = "#909398"
+syn_type = "#8EA4A2"
+syn_regex = "#C4746E"
+syn_deprecated = "#717C7C"
+syn_punct = "#909398"
+syn_comment = "#75797F"
+syn_special1 = "#C4B28A"
+syn_special2 = "#8992A7"
+syn_special3 = "#8992A7"
+
+# Ink/Zen/Mist diagnostics, version control, and diff backgrounds
+diag_error = "#C34043"
+diag_ok = "#98BB6C"
+diag_warning = "#DCA561"
+diag_info = "#658594"
+diag_hint = "#6A9589"
+vcs_added = "#76946A"
+vcs_removed = "#C34043"
+vcs_changed = "#DCA561"
+diff_add = "#2B3328"
+diff_delete = "#43242B"
+diff_change = "#252535"
+diff_text = "#49443C"
