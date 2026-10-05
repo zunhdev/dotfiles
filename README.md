@@ -65,9 +65,10 @@ herdr-radar daemon. Pass `--check` to only report prerequisites. herdr-radar
 installs its icon font and writes the Ghostty codepoint map itself; the map is
 already tracked in the `ghostty` package.
 
-The herdr-radar sidebar block in `config.toml` carries two hand-added Spaces
-rows (`$portlist`, and `branch` with `git_status`). The plugin regenerates that
-block on its `configure` and `view-native` actions, so re-add the rows after
+The herdr-radar sidebar block in `config.toml` carries three hand edits:
+`row_gap = 1` under `[ui.sidebar.spaces]` and two extra Spaces rows
+(`$portlist`, and `branch` with `git_status`). The plugin regenerates that
+block on its `configure` and `view-native` actions, so restore them after
 running either.
 
 ## Updating and removing
