@@ -5,3 +5,6 @@
 \.plugins\.lock
 release-notes\.json
 session\.json
+
+# Repository tooling, not a dotfile
+install-plugins\.sh

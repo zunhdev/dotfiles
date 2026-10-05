@@ -1,0 +1,10 @@
+# herdr-radar settings (https://github.com/hhdebb/herdr-radar#settings)
+# Off: we run a fixed custom palette ([theme.custom] in config.toml), and the
+# appearance follower would otherwise rewrite the managed sidebar block, which
+# carries a hand-added $ports row.
+follow_appearance = false
+
+# Agent rows show the tab name (Herdr 0.9.3 reports it as "N · name"), so the
+# ticket named on the tab shows instead of the default "Claude Code" title.
+# "both" duplicates the title on tabs that auto-title names after the session.
+row_label = "tab"
