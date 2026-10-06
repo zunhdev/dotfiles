@@ -56,12 +56,17 @@ the package alone leaves the sidebar, tab bar and ports keybinding inert. With
 Herdr running, install them with:
 
 ```sh
+stow --restow --no-folding --target="$HOME" herdr
 sh herdr/install-plugins.sh
 ```
 
 The script reports missing prerequisites (`jq`, `go`, Node 18+) rather than
-installing them, installs whichever plugins are absent, and starts the
-herdr-radar daemon. Pass `--check` to only report prerequisites. herdr-radar
+installing them, installs whichever plugins are absent, and starts Radar and
+the Ports watcher for existing panes. It wraps their installed manifest commands
+in a login shell so servers launched from a GUI can find Node and `jq`.
+Rerun the script after reinstalling either plugin; Herdr updates replace those
+manifests. Re-stowing also links any newly added plugin settings. Pass `--check`
+to only report prerequisites in the current shell. herdr-radar
 installs its icon font and writes the Ghostty codepoint map itself; the map is
 already tracked in the `ghostty` package.
 

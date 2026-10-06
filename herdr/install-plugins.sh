@@ -12,6 +12,7 @@
 #   sh herdr/install-plugins.sh          install what is missing
 #   sh herdr/install-plugins.sh --check  only report prerequisites and exit
 set -eu
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
 # plugin id, GitHub repo, what it needs on PATH
 PLUGINS='
@@ -83,9 +84,16 @@ $id
 done
 
 echo
+# These commands run in Herdr's server environment, which may lack the PATH
+# set by the user's shell. Herdr reloads manifests when actions are invoked.
+registry="${XDG_CONFIG_HOME:-$HOME/.config}/herdr/plugins.json"
+node "$script_dir/configure-plugin-runtime.cjs" "$registry"
+
 # The radar daemon normally starts with Herdr's server; after a fresh install
 # it has to be started by hand once. Idempotent: a running daemon is left alone.
 herdr plugin action invoke hhdebb.herdr-radar.state-start >/dev/null
+# Ports normally starts only on pane.created, so start it for existing panes.
+herdr plugin action invoke numbered.ports.ensure-watch >/dev/null
 herdr server reload-config >/dev/null
 echo "done. New Ghostty windows pick up the icon font; if the agent logos still"
 echo "render as boxes, quit and reopen Ghostty."

@@ -8,3 +8,4 @@ session\.json
 
 # Repository tooling, not a dotfile
 install-plugins\.sh
+configure-plugin-runtime\.cjs
